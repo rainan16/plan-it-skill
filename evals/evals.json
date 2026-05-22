@@ -1,0 +1,56 @@
+{
+  "skill_name": "plan-it",
+  "evals": [
+    {
+      "id": 1,
+      "eval_name": "direct-paste-expense-tracker",
+      "prompt": "ok so i just finished a question-me session about my expense tracker idea and here's what we came up with:\n\n## Refined Intent\nBuild a personal CLI expense tracker in Python...\n\nplan it!",
+      "expected_output": "A task_plan.md file with 5-6 phases, populated Decisions Made table, Key Questions, and a brief execution summary.",
+      "files": [],
+      "assertions": [
+        "Output file is named task_plan.md",
+        "Goal section present with one clear sentence matching refined intent",
+        "Phases section with 3-7 phases, each with checklist items and status",
+        "Decisions Made table populated from question-me output",
+        "Key Questions section carries over open questions",
+        "Phase 1 status is in_progress, others are pending",
+        "Errors Encountered table present",
+        "Current Phase tracking present"
+      ]
+    },
+    {
+      "id": 2,
+      "eval_name": "file-reference-deployment",
+      "prompt": "hey i ran question-me on my personal site deployment setup... make a plan please",
+      "expected_output": "A task_plan.md with phases for Hugo/Vercel deployment, decisions table, and key questions.",
+      "files": [],
+      "assertions": [
+        "Output file is named task_plan.md",
+        "Goal section present with one clear sentence matching refined intent",
+        "Phases section with 3-7 phases, each with checklist items and status",
+        "Decisions Made table populated from question-me output",
+        "Key Questions section carries over open questions",
+        "Phase 1 status is in_progress, others are pending",
+        "Errors Encountered table present",
+        "Current Phase tracking present"
+      ]
+    },
+    {
+      "id": 3,
+      "eval_name": "brief-ref-migration",
+      "prompt": "just had someone grill me on migrating our postgres database... plan it out for me",
+      "expected_output": "A task_plan.md with phases for DB migration, decisions table, and key questions.",
+      "files": [],
+      "assertions": [
+        "Output file is named task_plan.md",
+        "Goal section present with one clear sentence matching refined intent",
+        "Phases section with 3-7 phases, each with checklist items and status",
+        "Decisions Made table populated from question-me output",
+        "Key Questions section carries over open questions",
+        "Phase 1 status is in_progress, others are pending",
+        "Errors Encountered table present",
+        "Current Phase tracking present"
+      ]
+    }
+  ]
+}
