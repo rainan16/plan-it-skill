@@ -5,4 +5,9 @@ Author: Yichao 'Peak' Ji (Manus)
 Date: July 18, 2025
 URL: https://manus.im/blog/Context-Engineering-for-AI-Agents-Lessons-from-Building-Manus
 
-Other sources: Architectural analysis by Lance Martin, supplemented from [OthmanAdi/planning-with-files](https://github.com/OthmanAdi/planning-with-files/) licensed under MIT License.
+
+Other sources: 
+
+Architectural analysis by Lance Martin, supplemented from [OthmanAdi/planning-with-files](https://github.com/OthmanAdi/planning-with-files/) licensed under MIT License.
+
+[Tracer Bullets](https://www.aihero.dev/tracer-bullets)

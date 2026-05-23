@@ -4,7 +4,7 @@ description: Turn a refined idea or question-me output into a concrete, phase-ba
 license: Apache-2.0
 metadata:
   author: rainan16
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
 You are producing an execution plan from a refined idea or question-me session output. Your job is to translate the clarified intent into a structured, phase-based `task_plan.md` and a brief summary for the user.
@@ -69,11 +69,21 @@ The question-me output gives you:
 
 ### Phase design guidelines
 
-- Phase 1 should ALWAYS be some form of setup/understanding (even if the idea is already clarified, the executor needs to orient themselves)
+#### **Complex software development: Tracer bullets**: 
+When planning a complex software development task, apply the tracer bullets approach. Build a tiny end-to-end slice of the feature first, seek human feedback, then expand out from there. 
+- Phase 1: is a minimal setup (just enough to orient and prepare to run).
+- Phase 2: is the tracer bullet — the smallest independently-useful unit of the first feature, implemented through all layers. After that slice works, present it to the user for sign-off before expanding to Phases 3+.
 - Each phase should be completable in a single LLM session if possible
 - Split long phases; merge trivial ones
 - Name phases with consistent prefixes where it makes sense (e.g., `Phase 1: Setup`, `Phase 2: Core Implementation`, `Phase 3: Testing`)
 - For code projects, use the familiar pattern: Setup → Core Feature X → Feature Y → Testing → Polish/Delivery
+
+#### **Non-Code or simple code projects**: 
+- Phase 1: should ALWAYS be some form of setup/understanding (even if the idea is already clarified, the executor needs to orient themselves). 
+- Each phase should be completable in a single LLM session if possible
+- Split long phases; merge trivial ones
+- Name phases with consistent prefixes where it makes sense (e.g., `Phase 1: Setup`, `Phase 2: Core Implementation`, `Phase 3: Testing`)
+- For simple code projects, use the familiar pattern: Setup → Core Feature X → Feature Y → Testing → Polish/Delivery
 - For non-code tasks (research, writing, event planning), adapt the phases to the domain
 
 ## After writing the plan
