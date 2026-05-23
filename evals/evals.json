@@ -51,6 +51,23 @@
         "Errors Encountered table present",
         "Current Phase tracking present"
       ]
+    },
+    {
+      "id": 4,
+      "eval_name": "tracer-bullet-complex-software",
+      "prompt": "i need a plan for building a multi-tenant SaaS dashboard with real-time analytics. this is a complex software project. plan it out",
+      "expected_output": "A task_plan.md with the tracer bullets approach: minimal setup Phase 1, tracer bullet E2E slice in Phase 2, user sign-off gate, decisions table, and key questions.",
+      "files": [],
+      "assertions": [
+        "Output file is named task_plan.md",
+        "Goal section present with one clear sentence",
+        "Phase 1 described as minimal setup or just enough to orient and prepare to run",
+        "Phase 2 described as an end-to-end vertical slice or tracer bullet through all layers",
+        "User feedback or sign-off referenced after Phase 2",
+        "Decisions Made table populated",
+        "Errors Encountered table present",
+        "Current Phase tracking present"
+      ]
     }
   ]
 }

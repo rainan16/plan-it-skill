@@ -1,12 +1,12 @@
 {
   "skill_name": "plan-it",
-  "iteration": 1,
-  "date": "2026-05-22",
-  "variants": ["with_skill", "without_skill"],
+  "iteration": 2,
+  "date": "2026-05-23",
+  "variants": ["with_skill", "old_skill"],
   "summary": {
-    "with_skill": { "passed": 24, "total": 24, "pass_rate": 1.0 },
-    "without_skill": { "passed": 4, "total": 24, "pass_rate": 0.167 },
-    "delta": { "passed": 20, "pass_rate_improvement": 0.833 }
+    "with_skill": { "passed": 32, "total": 32, "pass_rate": 1.0 },
+    "old_skill": { "passed": 29, "total": 32, "pass_rate": 0.906 },
+    "delta": { "passed": 3, "pass_rate_improvement": 0.094 }
   },
   "results": [
     {
@@ -39,19 +39,19 @@
             {"assertion": "Current Phase tracking present", "passed": true}
           ]
         },
-        "without_skill": {
-          "passed": 2,
+        "old_skill": {
+          "passed": 8,
           "total": 8,
-          "pass_rate": 0.25,
+          "pass_rate": 1.0,
           "details": [
             {"assertion": "Output file is named task_plan.md", "passed": true},
-            {"assertion": "Goal section present with one clear sentence matching refined intent", "passed": false},
-            {"assertion": "Phases section with 3-7 phases, each with checklist items and status", "passed": false},
-            {"assertion": "Decisions Made table populated from question-me output", "passed": false},
+            {"assertion": "Goal section present with one clear sentence matching refined intent", "passed": true},
+            {"assertion": "Phases section with 3-7 phases, each with checklist items and status", "passed": true},
+            {"assertion": "Decisions Made table populated from question-me output", "passed": true},
             {"assertion": "Key Questions section carries over open questions", "passed": true},
-            {"assertion": "Phase 1 status is in_progress, others are pending", "passed": false},
-            {"assertion": "Errors Encountered table present", "passed": false},
-            {"assertion": "Current Phase tracking present", "passed": false}
+            {"assertion": "Phase 1 status is in_progress, others are pending", "passed": true},
+            {"assertion": "Errors Encountered table present", "passed": true},
+            {"assertion": "Current Phase tracking present", "passed": true}
           ]
         }
       }
@@ -59,7 +59,7 @@
     {
       "eval_id": 2,
       "eval_name": "file-reference-deployment",
-      "prompt_abbr": "Hugo site deployment to Vercel via conversational reference",
+      "prompt_abbr": "Personal site deployment via conversational reference",
       "assertions": [
         "Output file is named task_plan.md",
         "Goal section present with one clear sentence matching refined intent",
@@ -86,19 +86,19 @@
             {"assertion": "Current Phase tracking present", "passed": true}
           ]
         },
-        "without_skill": {
-          "passed": 1,
+        "old_skill": {
+          "passed": 8,
           "total": 8,
-          "pass_rate": 0.125,
+          "pass_rate": 1.0,
           "details": [
-            {"assertion": "Output file is named task_plan.md", "passed": false},
-            {"assertion": "Goal section present with one clear sentence matching refined intent", "passed": false},
-            {"assertion": "Phases section with 3-7 phases, each with checklist items and status", "passed": false},
-            {"assertion": "Decisions Made table populated from question-me output", "passed": false},
+            {"assertion": "Output file is named task_plan.md", "passed": true},
+            {"assertion": "Goal section present with one clear sentence matching refined intent", "passed": true},
+            {"assertion": "Phases section with 3-7 phases, each with checklist items and status", "passed": true},
+            {"assertion": "Decisions Made table populated from question-me output", "passed": true},
             {"assertion": "Key Questions section carries over open questions", "passed": true},
-            {"assertion": "Phase 1 status is in_progress, others are pending", "passed": false},
-            {"assertion": "Errors Encountered table present", "passed": false},
-            {"assertion": "Current Phase tracking present", "passed": false}
+            {"assertion": "Phase 1 status is in_progress, others are pending", "passed": true},
+            {"assertion": "Errors Encountered table present", "passed": true},
+            {"assertion": "Current Phase tracking present", "passed": true}
           ]
         }
       }
@@ -106,7 +106,7 @@
     {
       "eval_id": 3,
       "eval_name": "brief-ref-migration",
-      "prompt_abbr": "Postgres RDS migration from brief grill-me summary",
+      "prompt_abbr": "Postgres DB migration from brief grill-me summary",
       "assertions": [
         "Output file is named task_plan.md",
         "Goal section present with one clear sentence matching refined intent",
@@ -133,19 +133,66 @@
             {"assertion": "Current Phase tracking present", "passed": true}
           ]
         },
-        "without_skill": {
-          "passed": 1,
+        "old_skill": {
+          "passed": 8,
           "total": 8,
-          "pass_rate": 0.125,
+          "pass_rate": 1.0,
           "details": [
-            {"assertion": "Output file is named task_plan.md", "passed": false},
-            {"assertion": "Goal section present with one clear sentence matching refined intent", "passed": false},
-            {"assertion": "Phases section with 3-7 phases, each with checklist items and status", "passed": false},
-            {"assertion": "Decisions Made table populated from question-me output", "passed": false},
+            {"assertion": "Output file is named task_plan.md", "passed": true},
+            {"assertion": "Goal section present with one clear sentence matching refined intent", "passed": true},
+            {"assertion": "Phases section with 3-7 phases, each with checklist items and status", "passed": true},
+            {"assertion": "Decisions Made table populated from question-me output", "passed": true},
             {"assertion": "Key Questions section carries over open questions", "passed": true},
-            {"assertion": "Phase 1 status is in_progress, others are pending", "passed": false},
-            {"assertion": "Errors Encountered table present", "passed": false},
-            {"assertion": "Current Phase tracking present", "passed": false}
+            {"assertion": "Phase 1 status is in_progress, others are pending", "passed": true},
+            {"assertion": "Errors Encountered table present", "passed": true},
+            {"assertion": "Current Phase tracking present", "passed": true}
+          ]
+        }
+      }
+    },
+    {
+      "eval_id": 4,
+      "eval_name": "tracer-bullet-complex-software",
+      "prompt_abbr": "Multi-tenant SaaS dashboard with real-time analytics",
+      "assertions": [
+        "Output file is named task_plan.md",
+        "Goal section present with one clear sentence",
+        "Phase 1 described as minimal setup or just enough to orient and prepare to run",
+        "Phase 2 described as an end-to-end vertical slice or tracer bullet through all layers",
+        "User feedback or sign-off referenced after Phase 2",
+        "Decisions Made table populated",
+        "Errors Encountered table present",
+        "Current Phase tracking present"
+      ],
+      "variants": {
+        "with_skill": {
+          "passed": 8,
+          "total": 8,
+          "pass_rate": 1.0,
+          "details": [
+            {"assertion": "Output file is named task_plan.md", "passed": true},
+            {"assertion": "Goal section present with one clear sentence", "passed": true},
+            {"assertion": "Phase 1 described as minimal setup or just enough to orient and prepare to run", "passed": true},
+            {"assertion": "Phase 2 described as an end-to-end vertical slice or tracer bullet through all layers", "passed": true},
+            {"assertion": "User feedback or sign-off referenced after Phase 2", "passed": true},
+            {"assertion": "Decisions Made table populated", "passed": true},
+            {"assertion": "Errors Encountered table present", "passed": true},
+            {"assertion": "Current Phase tracking present", "passed": true}
+          ]
+        },
+        "old_skill": {
+          "passed": 5,
+          "total": 8,
+          "pass_rate": 0.625,
+          "details": [
+            {"assertion": "Output file is named task_plan.md", "passed": true},
+            {"assertion": "Goal section present with one clear sentence", "passed": true},
+            {"assertion": "Phase 1 described as minimal setup or just enough to orient and prepare to run", "passed": false},
+            {"assertion": "Phase 2 described as an end-to-end vertical slice or tracer bullet through all layers", "passed": false},
+            {"assertion": "User feedback or sign-off referenced after Phase 2", "passed": false},
+            {"assertion": "Decisions Made table populated", "passed": true},
+            {"assertion": "Errors Encountered table present", "passed": true},
+            {"assertion": "Current Phase tracking present", "passed": true}
           ]
         }
       }
@@ -153,18 +200,19 @@
   ],
   "analyst_notes": {
     "non_discriminating_assertions": [
-      "Key Questions section carries over open questions (passed in both conditions for all 3 evals)"
+      "All standard structural assertions (Goal, Phases, Decisions, Key Questions, Errors, Current Phase) pass for both variants on evals 1-3",
+      "Key Questions section carries over open questions (passes in both conditions for all evals)"
     ],
     "highest_signal_assertions": [
-      "Decisions Made table populated from question-me output (0/3 baseline)",
-      "Phase 1 status is in_progress, others are pending (0/3 baseline)",
-      "Errors Encountered table present (0/3 baseline)",
-      "Current Phase tracking present (0/3 baseline)"
+      "Phase 1 described as minimal setup (0/4 old_skill on eval 4, 1/4 with_skill)",
+      "Phase 2 described as end-to-end vertical slice (0/4 old_skill on eval 4, 1/4 with_skill)",
+      "User feedback or sign-off after Phase 2 (0/4 old_skill on eval 4, 1/4 with_skill)"
     ],
     "qualitative_observations": [
-      "With-skill produced identical task_plan.md structure across 3 different domains (code, infra, devops)",
-      "Without-skill produced 3 different output formats — content quality was high but structure was inconsistent",
-      "Skill prevented premature architecture decisions (without-skill jumped to file structure in eval 1)"
+      "New skill produces tracer-bullet phase structure for complex software (eval 4): Phase 1 scaffolding, Phase 2 E2E slice with sign-off gate",
+      "Old skill produces architecture-first Phase 1 for complex software — heavy design phase before any implementation",
+      "Both variants produce identical structural quality for standard evals (1-3) — the tracer bullets addition is purely additive",
+      "New skill also produced findings.md and progress.md reference files per skill guidelines; old skill only produced task_plan.md"
     ]
   }
 }

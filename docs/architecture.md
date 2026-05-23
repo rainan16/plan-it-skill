@@ -5,12 +5,15 @@ plan-it-skill/
 ├── AGENTS.md                        # This file — agent entry point
 ├── README.md                        # Human-facing overview
 ├── LICENSE                          # Apache 2.0
+├── NOTICE                           # Notices
+├── docs/
+│   ├── architecture.md              # This file
+│   └── evals.md                     # How to rerun evals
+├── evals/
+│   ├── evals.json                   # 3 test prompts + 8 assertions each
+│   └── baseline-results.json        # Iteration 1 benchmark (merged single file)
 └── .agents/skills/plan-it/
     ├── SKILL.md                     # Core instructions (read this first)
-    ├── AGENTS.md                    # How to rerun evals (agent-facing)
-    ├── evals/
-    │   ├── evals.json               # 3 test prompts + 8 assertions each
-    │   └── baseline-results.json    # Iteration 1 benchmark (merged single file)
     └── references/
         ├── task_plan.md             # Output template (Goal → Phases → Decisions → Errors)
         ├── findings.md              # Knowledge base template (2-action rule)
@@ -38,5 +41,5 @@ task_plan.md  ←  written to user's working directory
 - **KV-cache**: SKILL.md prompt prefix must stay stable. No timestamps in system prompt.
 - **Append-only context**: Never modify previous actions/observations.
 - **File system as context**: task_plan.md is working memory on disk. Context = volatile RAM.
-- **Recitation**: Rewrite plan.md after each phase to keep goal in recent attention window.
+- **Recitation**: Rewrite task_plan.md after each phase to keep goal in recent attention window.
 - **Error retention**: Leave failures in context — each mistake teaches the model.

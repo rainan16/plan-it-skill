@@ -4,7 +4,7 @@ description: Turn a refined idea or question-me output into a concrete, phase-ba
 license: Apache-2.0
 metadata:
   author: rainan16
-  version: "1.1.0"
+  version: "1.2.0"
 ---
 
 You are producing an execution plan from a refined idea or question-me session output. Your job is to translate the clarified intent into a structured, phase-based `task_plan.md` and a brief summary for the user.
@@ -19,7 +19,7 @@ The user may hand you the intent in one of two ways:
 
 In either case, read the output carefully before planning.
 
-Plan-it should NOT trigger for simple to-do lists or quick one-step tasks that don't need phased execution.
+This skill should NOT trigger for simple to-do lists or quick one-step tasks that don't need phased execution.
 
 ## Core principles (read the reference)
 
@@ -39,15 +39,15 @@ You produce **two things**:
 Write this to the user's working directory. Use the template at `references/task_plan.md` as your starting point. Adapt the phases to match the specific task — the template's 5 phases (Requirements, Planning, Implementation, Testing, Delivery) are a sensible default for software projects, but you should rename, split, or merge them as needed.
 
 Every `task_plan.md` MUST include these sections:
-- **Goal** — one clear sentence describing the end state (directly from the question-me refined intent)
+- **Goal** — one clear sentence describing the end state (directly from the refined intent, e.g. `question-me` skill)
 - **Current Phase** — always start at Phase 1
 - **Phases** — 3–7 phases, each with:
   - A descriptive title
   - Concrete checklist items
   - A status: `pending`, `in_progress`, or `complete`
   - Status for Phase 1 starts at `in_progress`, rest at `pending`
-- **Key Questions** — carry over from question-me's open questions, plus any new ones
-- **Decisions Made** — populate from question-me's key decisions table
+- **Key Questions** — carry over from `question-me` skill's open questions, plus any new ones
+- **Decisions Made** — populate from `question-me` skill's key decisions table
 - **Errors Encountered** — start empty, the template table is ready for the executor to fill
 
 ### 2. A brief execution summary (printed to the conversation, not a file)
@@ -59,20 +59,22 @@ A short message to the user covering:
 - Any open questions that still need answering before execution starts
 - Any risks or ambiguities you noticed
 
-## Deriving phases from question-me output
+## Deriving phases
 
-The question-me output gives you:
+The `question-me` skill output gives you:
 - **Refined intent** → becomes the Goal
 - **Key decisions** → populate the Decisions Made table
 - **Open questions** → populate the Key Questions section (they need answers before or during execution)
 - **Suggested next steps** → these are the seed for your phases. Expand them into full phases with detailed checklist items. A single "Implement the X" step might become a full phase with 3-5 sub-tasks.
 
+If you only got the user's intent (no `question-me` skill output), refine it if not clear.
+
 ### Phase design guidelines
 
 #### **Complex software development: Tracer bullets**: 
 When planning a complex software development task, apply the tracer bullets approach. Build a tiny end-to-end slice of the feature first, seek human feedback, then expand out from there. 
-- Phase 1: is a minimal setup (just enough to orient and prepare to run).
-- Phase 2: is the tracer bullet — the smallest independently-useful unit of the first feature, implemented through all layers. After that slice works, present it to the user for sign-off before expanding to Phases 3+.
+- Phase 1: is a minimal setup (just enough to orient and prepare to run)
+- Phase 2: is the tracer bullet — the smallest independently-useful unit of the first feature, implemented through all layers. After that slice works, present it to the user for sign-off before expanding to Phases 3+
 - Each phase should be completable in a single LLM session if possible
 - Split long phases; merge trivial ones
 - Name phases with consistent prefixes where it makes sense (e.g., `Phase 1: Setup`, `Phase 2: Core Implementation`, `Phase 3: Testing`)
@@ -90,7 +92,9 @@ When planning a complex software development task, apply the tracer bullets appr
 
 Tell the user you've created the plan. Offer to:
 1. Review and adjust any phases
-2. Start executing the first phase
-3. Save additional reference files (`findings.md` for discoveries, `progress.md` for the session log) if the task warrants a full template set
+2. Saving the results
+3. Save additional reference files, if the task warrants a full template set:
+    - `findings.md` for discoveries
+    - `progress.md` for the session log 
 
 For complex tasks, suggest also creating `findings.md` and `progress.md` from the corresponding templates in `references/`. For simpler tasks, `task_plan.md` alone is sufficient.
